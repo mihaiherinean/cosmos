@@ -1,0 +1,65 @@
+@import "../../../../../styles/variables.scss";
+
+.prevarrow {
+    width: 20px;
+    height: 20px;
+    background-color: $darkgray;
+    border-radius: 5px 5px;
+    position: absolute;
+    bottom: 50%;
+    left: 10px;
+    z-index: 1;
+    &:hover{
+        background-color: $darkergray;
+        cursor: pointer;
+    }
+    @include breakpoint(md){
+        left: 5px;
+        width: 30px;
+        height: 30px;
+    }
+    @include breakpoint(lg){
+        left: 0;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.nextarrow {
+    width: 20px;
+    height: 20px;
+    background-color: $darkgray;
+    border-radius: 5px 5px;
+    position: absolute;
+    bottom: 50%;
+    right: 10px;
+    z-index: 1;
+    &:hover{
+        background-color: $darkergray;
+        cursor: pointer;
+    }
+    @include breakpoint(md){
+        right: 5px;
+        width: 30px;
+        height: 30px;
+    }
+    @include breakpoint(lg){
+        right: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    @include breakpoint(md){
+        width: 30px;
+        height: 30px;
+    }
+    @include breakpoint(lg){
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -1,0 +1,146 @@
+@import "../../styles/variables.scss";
+
+.header {
+  width: 100%;
+  height: $headerHeight;
+  background-color: $dark;
+  color: $primary;
+}
+
+.mainContainer {
+  height: 100%;
+  width: 85%;
+  max-width: $containerWidth;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  @include breakpoint(sm){
+    width: 90%;
+  }
+
+  .menu {
+    min-width: 30px;
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+
+  .logolink{
+    color: $primary;
+    text-decoration: none;
+  }
+
+  .logo {
+    font-weight: map-get($fontWeights, "semibold");
+    letter-spacing: 1px;
+    font-size: 30px;
+    padding: 4px;
+   
+  }
+
+  .logo > span {
+    font-weight: map-get($fontWeights, "regular");
+  }
+
+}
+
+
+.secondContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  @include breakpoint(md) {
+    justify-content: space-between;
+  }
+
+  .navbar {
+    display: none;
+    @include breakpoint(md) {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  .navbar > a {
+    transition: all 0.2s ease-in-out;
+    padding: 4px 8px;
+    text-decoration: none;
+    color: $primary;
+    font-size: 16px;
+    &:hover {
+      background-color: $darkblue;
+      border-radius: 10px 10px;
+    }
+    span {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 4px;
+      gap: 4px;
+    }
+  }
+  
+  .cart {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    gap: 2px;
+    margin-right: 10px;
+    @include breakpoint(lg){
+      margin-right: 0;
+    }
+  }
+}
+
+.mobileNav {
+  position: fixed;
+  top: $headerHeight;
+  left:0;
+  width: 200px;
+  height: 100%;
+  background-color: $dark;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+  @include breakpoint(md) {
+    display: none;
+  }
+}
+
+.hiddenNav {
+  position: fixed;
+  left: -100%;
+  width: 200px;
+  height: 100%;
+  background-color: $dark;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+  font-size: 25px;
+}
+
+.mobileNav a,
+.hiddenNav a {
+  text-decoration: none;
+  color: $primary;
+  padding: 8px 16px;
+  transition: all 0.2s ease-in-out;
+  font-size: 16px;
+  width: 90%;
+  border-radius: 10px 10px;
+  margin: 0 auto;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+
+.mobileNav a:hover {
+  background-color: $darkblue;
+}

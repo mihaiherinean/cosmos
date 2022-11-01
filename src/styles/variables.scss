@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
+
+$textUbuntu: "Ubuntu", sans-serif;
+
+//fontWeights
+
+$fontWeights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+);
+
+//widths and heights
+$headerHeight: 60px;
+$footerHeight: 150px;
+$containerWidth: 1000px;
+
+//colors
+
+$dark: #141922;
+$darkblue: #1b212b;
+$primary: #a9b5cc;
+$green: #46c351;
+$darkgreen: #379a3f;
+$darkborder: #181d26;
+$darkgray: #2d333d;
+$darkergray: #262b34;
+$ticket: #272B35;
+//breakpoints
+
+@mixin breakpoint($point) {
+  @if $point == sm {
+    @media screen and (min-width: 576px) {
+      @content;
+    }
+  }
+  @if $point == md {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $point == lg {
+    @media screen and (min-width: 992px) {
+      @content;
+    }
+  }
+}
